@@ -1,0 +1,156 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.abstract, .workflow {
+    background: #f9f9f9;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.team {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmap(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.team-member {
+    text-align: center;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.member-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    object-fit: cover;
+}
+
+h1, h2 {
+    color: #2c3e50;
+}
+
+.project-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 2rem 0;
+}
+
+.workflow-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.workflow-step {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.workflow-step h3 {
+    color: #3498db;
+    margin-top: 0;
+}
+
+.step-number {
+    background: #3498db;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+.technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.tech-tag {
+    background: #e1f0ff;
+    color: #3498db;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(to right, #2c3e50, #3498db);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+}
+
+.title-underline {
+    margin-top: -10px;
+    margin-bottom: 20px;
+}
+
+.contact-footer {
+    background: #f5f5f5;
+    padding: 1.5rem;
+    text-align: right;
+    border-top: 1px solid #eaeaea;
+}
+
+.contact-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.email-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #3498db;
+    padding: 5px;
+}
+
+.contact-text {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.email-link {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.email-link:hover {
+    color: #2980b9;
+}

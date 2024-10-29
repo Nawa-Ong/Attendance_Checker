@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://www.it.kmitl.ac.th/~pattarachai/PIC/ICON/emailspin.gif" type="image/gif">
+    <title>Physical Compuuter Project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="title-container">
+        <h1>Attendance Checker</h1>
+        <svg class="title-underline" width="280" height="20" viewBox="0 0 280 20">
+            <defs>
+                <linearGradient id="underlineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:#ff6b6b" />
+                    <stop offset="50%" style="stop-color:#4ecdc4" />
+                    <stop offset="100%" style="stop-color:#45b7d1" />
+                </linearGradient>
+            </defs>
+            <path d="M10,10 Q140,25 270,10" 
+                  stroke="url(#underlineGradient)" 
+                  stroke-width="3" 
+                  fill="none"
+                  stroke-linecap="round" />
+        </svg>
+    </div>
+    <div class="container">
+        <section class="abstract">
+            <h2>Project Abstract</h2>
+            <p>
+                โครงการ Attendance Checker มีจุดมุ่งหมายเพื่อแก้ไขปัญหาในการเช็คชื่อของนักศึกษาที่ไม่สามารถดำเนินการสแกนหรือเช็คชื่อได้ทันเวลาในชั้นเรียน รวมทั้งอาจนำไปใช้เพื่ออำนวยความสะดวกในการเช็คชื่อก่อนเข้าห้องสอบได้อีกด้วย ระบบนี้ออกแบบมาเพื่อช่วยนักศึกษาที่เผชิญปัญหาการสแกน QR Code ไม่ทันหรือเกิดข้อผิดพลาดที่ทำให้ไม่สามารถเช็คชื่อได้สำเร็จ โดยมีการแจ้งเตือนผลการเช็คชื่อผ่านแอปพลิเคชัน Line เพื่อให้ผู้ใช้งานรับทราบ
+                การทำงานของโปรเจกต์เริ่มต้นจากการสแกนบัตรของนักศึกษากับเครื่องตรวจบัตร เมื่อมีการสแกนบัตร ระบบจะตรวจสอบและบันทึกข้อมูลการเช็คชื่อไว้ พร้อมทั้งส่งการแจ้งเตือนไปยัง Line โดยระบุเวลาที่ทำการเช็คชื่อ ต่อจากนั้น ข้อมูลบัตรที่สแกนได้จะถูกส่งไปเปรียบเทียบกับฐานข้อมูลบน Google Sheet เพื่อยืนยันตัวตนและแสดงข้อมูลชื่อ นามสกุล รหัสนักศึกษา สถานะ วันที่และเวลาที่ทำการเช็คชื่อ หากบัตรที่สแกนไม่สามารถระบุตัวตนได้ ระบบจะขึ้นข้อความว่า "Unknown" เพื่อแจ้งเตือน
+            </p>
+            
+            <img src="#" alt="Project Architecture" class="project-img">
+            
+            <h3>Key Features:</h3>
+            <ul>
+                <li>มีการเชื่อมต่อกับ Line เพื่อแสดงให้ผู้ใช้งานรับทราบ</li>
+                <li>เก็บข้อมูลการสแกนบัตร ไว้ใน Google Sheet</li>
+            </ul>
+        </section>
+
+        <section class="workflow">
+            <h2>การทำงานของ Attendance Checker</h2>
+            
+            <div class="workflow-grid">
+                <div class="workflow-step">
+                    <span class="step-number">1</span>
+                    <h3>Card Scanning</h3>
+                    <p>นักศึกษาสแกนบัตรเข้ากับเครื่องสแกนบัตร:</p>
+                    <ul>
+                        <li>RFID card reader</li>
+                        <li>RFID Tag (Student ID card)</li>
+                        <li>Real-time scanning</li>
+                    </ul>
+                    <div class="technologies">
+                        <span class="tech-tag">RFID Reader</span>
+                        <span class="tech-tag">Arduino</span>
+                        <span class="tech-tag">UNO R4 WIFI</span>
+                    </div>
+                </div>
+
+                <div class="workflow-step">
+                    <span class="step-number">2</span>
+                    <h3>Data Verification</h3>
+                    <p>เครื่องสแกนทำการตรวจสอบว่ามีบัตรมาสแกนหรือไม่ถ้ามีส่งไปแจ้งเตือนที่ Line พร้อมทั้งแสดงข้อมูลการเช็คชื่อ:</p>
+                    <ul>
+                        <li>Line messaging</li>
+                        <li>Status updates</li>
+                        <li>Real-time alerts</li>
+                    </ul>
+                    <div class="technologies">
+                        <span class="tech-tag">Line API</span>
+                        <span class="tech-tag">Notifications</span>
+                    </div>
+                </div>
+
+                <div class="workflow-step">
+                    <span class="step-number">3</span>
+                    <h3>Data Recording</h3>
+                    <p>เครืองสแกนทำการบันทึกค่าข้อมูลที่ได้จากนั้นส่งข้อมูลไปเทียบกับฐานข้อมูลใน Google Sheet ที่ได้เตรียมไว้เพื่อดูว่าบัตรที่สแกนมีในฐานข้อมูลหรือไม่ ถ้าไม่มีให้แสดง "Unknown" พร้อมกับรหัสบัตร:</p>
+                    <ul>
+                        <li>Database lookup</li>
+                        <li>Student verification</li>
+                        <li>Timestamp recording</li>
+                    </ul>
+                    <div class="technologies">
+                        <span class="tech-tag">Google Sheets</span>
+                        <span class="tech-tag">Cloud Storage</span>
+                    </div>
+                </div>
+
+                <div class="workflow-step">
+                    <span class="step-number">4</span>
+                    <h3>Notification</h3>
+                    <p>เครื่องสแกนแสดงผลข้อมูลของนักศึกษาที่สแกนบัตรเข้ามาไว้ใน Google Sheet เพื่อเป็นการบันทึกข้อมูล:</p>
+                    <ul>
+                        <li>Student details</li>
+                        <li>Timestamp</li>
+                        <li>Attendance status</li>
+                    </ul>
+                    <div class="technologies">
+                        <span class="tech-tag">Google Sheets API</span>
+                        <span class="tech-tag">Database</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Our Team</h2>
+            <div class="team">
+                <div class="team-member">
+                    <img src="https://www.it.kmitl.ac.th/~pattarachai/PIC/ICON/emailspin.gif" alt="Team Member 1" class="member-img">
+                    <h3>Team Member 1 66070012</h3>
+                    <p>Guntika Chaengthaisong (Namkhing)</p>
+                </div>
+
+                <div class="team-member">
+                    <img src="/img/66070100.jpg" alt="Team Member 2" class="member-img">
+                    <h3>Team Member 2 66070100</h3>
+                    <p>Nawachart Ongcharoen (New)</p>
+                </div>
+
+                <div class="team-member">
+                    <img src="/img/66070101.jpeg" alt="Team Member 3" class="member-img">
+                    <h3>Team Member 3 66070101</h3>
+                    <p>Natthapong Wongsomsri (Tai)</p>
+                </div>
+
+                <div class="team-member">
+                    <img src="https://www.it.kmitl.ac.th/~pattarachai/PIC/ICON/emailspin.gif" alt="Team Member 4" class="member-img">
+                    <h3>Team Member 4 66070109</h3>
+                    <p>Bantita Chuatrakul (Som)</p>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="container">
+                <p>&copy; 2024 AttendanceChecker. All rights reserved.</p>
+            </div>
+            
+            <div class="contact-footer">
+                <div class="contact-container">
+                    <p class="contact-text">Any problem with website, feel free to contact me.</p>
+                    <img src="https://www.it.kmitl.ac.th/~pattarachai/PIC/ICON/emailspin.gif" alt="Email">
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
