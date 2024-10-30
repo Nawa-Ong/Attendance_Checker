@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap');
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -56,10 +58,17 @@ h1, h2 {
 
 .workflow-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, 1fr); /* Shows 2 columns */
     gap: 2rem;
     margin: 2rem 0;
 }
+
+@media (max-width: 768px) {
+    .workflow-grid {
+        grid-template-columns: 1fr; /* Shows 1 column on small screens */
+    }
+}
+
 
 .workflow-step {
     background: white;
@@ -105,10 +114,22 @@ h1, h2 {
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
-    background: linear-gradient(to right, #2c3e50, #3498db);
+    background: linear-gradient(135deg, #1a2a3a, #2c3e50);
     color: white;
     text-align: center;
     padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    font-size: 2.5rem;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-weight: 700;
+    letter-spacing: 0.5px;
 }
 
 .title-underline {
